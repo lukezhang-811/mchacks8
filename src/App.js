@@ -13,7 +13,8 @@ import {
 import TapScreen from './screens/tapscreen';
 import Main from './screens/main';
 import BreakDefault from "./screens/breakdefault";
-import BackToWork from "./screens/backtowork"
+import BackToWork from "./screens/backtowork";
+import Summary from "./screens/summary";
 
 class App extends Component {
 
@@ -27,6 +28,7 @@ class App extends Component {
               <Route exact path="/tap" component={TapScreen}/>
               <Route exact path="/break-default" component={BreakDefault}/>
               <Route exact path="/break-end" component={BackToWork}/>
+              <Route exact path="/summary" component={Summary}/>
             </Switch>
           </Router>
         </div>

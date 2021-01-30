@@ -9,6 +9,9 @@ class BackToWork extends Component {
                 <h2>
                     <Link to="/tap"style={{ textDecorastion: 'none'}}>Go Back To Work</Link>
                 </h2>
+                <h2>
+                    <Link to="/summary"style={{ textDecorastion: 'none'}}>End Work Day!</Link>
+                </h2>
             </div>
         )
     }
