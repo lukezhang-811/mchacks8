@@ -23,8 +23,12 @@ class TapScreen extends Component {
     }*/
 
     componentWillMount(){
-        setTimeout(() => {
+        setTimeout( async() => {
             console.log(this.state.clickTimes);
+            const response = await fetch("http://127.0.0.1:8000/", {
+                method: 'POST',
+                body: JSON.stringify(this.state.clickTimes)
+            })
             this.props.history.push('/break-default');
         }, 15000)
     }
