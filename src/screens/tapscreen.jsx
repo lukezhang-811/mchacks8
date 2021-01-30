@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Tap from './tap.jsx';
 import Countdown from 'react-countdown';
 import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
 
 class TapScreen extends Component {
 
@@ -25,14 +26,12 @@ class TapScreen extends Component {
         setTimeout(() => {
             console.log(this.state.clickTimes);
             this.props.history.push('/break-default');
-        }, 10000)
+        }, 15000)
     }
 
     render() {
         return (
             <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}>
-                <Countdown date={Date.now() + 10000}>
-                </Countdown>
                 <Tap addTime={this.storeTime}/>
             </div>
         )}
