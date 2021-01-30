@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {
+    BrowserRouter as Router,
+    Route,
+    Switch,
+    Redirect
+} from "react-router-dom";
+
+// screens
+import TapScreen from './screens/tapscreen';
+import Main from './screens/main';
+import BreakDefault from "./screens/breakdefault";
+import BackToWork from "./screens/backtowork"
+
+class App extends Component {
+
+  render()
+  {
+    return (
+        <div>
+          <Router>
+            <Switch>
+              <Route exact path="/" component={Main}/>
+              <Route exact path="/tap" component={TapScreen}/>
+              <Route exact path="/break-default" component={BreakDefault}/>
+              <Route exact path="/break-end" component={BackToWork}/>
+            </Switch>
+          </Router>
+        </div>
+    );
+  }
 }
 
 export default App;
+
