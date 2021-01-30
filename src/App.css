@@ -37,10 +37,32 @@
   }
 }
 
+html, body {
+  height: 100%;
+}
+
+#background {
+  height: 100%;
+}
+
 .new-line {
   white-space: pre-line;
 }
 
 div {
   background-color: lightskyblue;
+}
+
+#root .container-fluid {
+  min-height: 100vh;
+}
+
+#content {
+  flex: 0 0 120px;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

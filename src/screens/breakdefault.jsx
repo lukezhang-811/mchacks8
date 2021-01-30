@@ -14,16 +14,23 @@ class BreakDefault extends Component {
 
     render() {
         return (
-            <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}>
-                <h1>Please Take a Break</h1>
-                <div className='new-line'>
-                    <Countdown date={Date.now() + 10000} />
-                    <h2>
-                        <Link to="/tap"style={{ textDecorastion: 'none'}}>Go Back To Work</Link>
-                    </h2>
-                    <h2>
-                        <Link to="/summary"style={{ textDecorastion: 'none'}}>End Work Day!</Link>
-                    </h2>
+            <div id="root">
+                <div className="container-fluid">
+                    <div style={{
+                        position: 'absolute', left: '50%', top: '45%',
+                        transform: 'translate(-50%, -50%)'
+                    }}>
+                        <div id="content">
+                            <Countdown date={Date.now() + 30000} />
+                            <h2>Please Take a Break!</h2> <br/>
+                            <Button variant="outline-primary">
+                                <Link to="/tap" style={{textDecorastion: 'none'}}>Go Back To Work</Link>
+                            </Button> <br/> <br/>
+                            <Button variant="outline-primary">
+                                <Link to="/summary" style={{textDecorastion: 'none'}}>End Work Day!</Link>
+                            </Button>
+                        </div>
+                    </div>
                 </div>
             </div>
         )}
