@@ -8,6 +8,7 @@ import Tree4 from '../assets/tree4.svg';
 import Tree5 from '../assets/tree5.svg';
 import Tree6 from '../assets/tree6.svg';
 import boopSfx from '../assets/drip.mp3';
+import Pop from '../assets/pop.mp3';
 import Button from 'react-bootstrap/Button';
 
 let numClick = 0;
@@ -15,9 +16,14 @@ let numClick = 0;
 const Tap = (props) => {
 
     const [playBoop] = useSound(boopSfx);
+    const [playPop] = useSound(Pop);
 
     function handleClick() {
-        playBoop();
+        if(numClick==100) {
+            playPop();
+        } else {
+            playBoop();
+        }
         let timeNow = Date.now();
         console.log(timeNow);
         props.addTime(timeNow);
