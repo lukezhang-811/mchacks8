@@ -6,15 +6,16 @@ import Countdown from "react-countdown";
 import Music from './music';
 import Meditate from './meditate';
 import Weather from './weather';
+import Stretch from "./stretch";
 
 
 class BreakDefault extends Component {
 
-    /*componentWillMount(){
+    componentWillMount(){
         setTimeout(() => {
             this.props.history.push('/break-end');
-        }, 50000)
-    }*/
+        }, 60000)
+    }
 
 
     detActivity() {
@@ -26,6 +27,8 @@ class BreakDefault extends Component {
             return(<div> <Meditate/> <br/> </div>)
         } else if(x==3) {
             return(<div><h3>Maybe go on a walk?</h3> <br/><Weather/> <br/></div>)
+        } else {
+            return(<div><Stretch/><br/><br/></div>)
         }
     }
 
@@ -42,7 +45,7 @@ class BreakDefault extends Component {
                         transform: 'translate(-50%, -50%)'
                     }}>
                         <div id="content">
-                            <Countdown date={Date.now() + 50000} />
+                            <Countdown date={Date.now() + 60000} />
                             <h2>Please Take a Break!</h2> <br/>
                             {this.detActivity()}
                             <Button variant="outline-warning" onClick={this.handleClick()}>
