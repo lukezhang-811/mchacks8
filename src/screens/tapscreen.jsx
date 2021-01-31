@@ -33,10 +33,10 @@ class TapScreen extends Component {
                 method: 'POST',
                 body: JSON.stringify(this.state.clickTimes)
             })*/
-            axios.post(API_URL, this.state.clickTimes).then(() => {
+            /*axios.post(API_URL, this.state.clickTimes).then(() => {
                 this.props.resetState();
                 this.props.toggle();
-            });
+            });*/
             this.props.history.push('/break-default');
         }, 15000)
     }
