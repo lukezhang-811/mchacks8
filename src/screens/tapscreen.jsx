@@ -3,6 +3,7 @@ import Tap from './tap.jsx';
 import Countdown from 'react-countdown';
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
+//import Graph from './plot.jsx';
 
 import axios from "axios";
 import { API_URL } from "../index.js";
@@ -33,10 +34,10 @@ class TapScreen extends Component {
                 method: 'POST',
                 body: JSON.stringify(this.state.clickTimes)
             })*/
-            axios.post(API_URL, this.state.clickTimes).then(() => {
+            /*axios.post(API_URL, this.state.clickTimes).then(() => {
                 this.props.resetState();
                 this.props.toggle();
-            });
+            });*/
             this.props.history.push('/break-default');
         }, 15000)
     }
